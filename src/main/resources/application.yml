@@ -1,0 +1,18 @@
+server:
+  port: 11011
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.5.25:3306/cas?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    username: root
+    password: root
+    hikari:
+      maximum-pool-size: 1
+      minimum-idle: 1
+  application:
+    name: my-cas-server
+logging:
+  level:
+    org:
+      wzx:
+        mycas: debug
