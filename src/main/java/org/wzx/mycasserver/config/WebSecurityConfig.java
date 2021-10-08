@@ -43,12 +43,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(
             AuthenticationManagerBuilder auth) throws Exception {
 //        auth.authenticationProvider(myProvider); //注册自定义的provider
-//        auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder())
-//                .withUser("root").password(new BCryptPasswordEncoder().encode("123")).roles("ADMIN", "DBA")
-//                .and()
-//                .withUser("admin").password(new BCryptPasswordEncoder().encode("123")).roles("ADMIN", "USER")
-//                .and()
-//                .withUser("wzx").password(new BCryptPasswordEncoder().encode("123")).roles("USER");
+        auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder())
+                .withUser("root").password(new BCryptPasswordEncoder().encode("123")).roles("ADMIN", "DBA")
+                .and()
+                .withUser("admin").password(new BCryptPasswordEncoder().encode("123")).roles("ADMIN", "USER")
+                .and()
+                .withUser("wzx").password(new BCryptPasswordEncoder().encode("123")).roles("USER");
 //        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
 
