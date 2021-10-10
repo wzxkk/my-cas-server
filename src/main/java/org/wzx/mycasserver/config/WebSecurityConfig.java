@@ -2,6 +2,7 @@ package org.wzx.mycasserver.config;
 
 import cn.hutool.http.HttpUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -13,6 +14,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.session.HttpSessionEventPublisher;
+import org.wzx.mycasserver.core.MyUserDetailsService;
+import org.wzx.mycasserver.service.impl.UserInfoServiceImpl;
 
 import javax.servlet.http.Cookie;
 import java.util.UUID;
@@ -27,6 +30,24 @@ import java.util.UUID;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)  //  启用方法级别的权限认证
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+    //    @Autowired
+//    private MyProvider myProvider;
+//    @Autowired
+//  private   TokenInterceptor tokenInterceptor;
+//    @Autowired
+//    private MyConfig myConfig;
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        // 注册token拦截器
+//        registry.addInterceptor(tokenInterceptor)
+//                .addPathPatterns("/**")
+//                .excludePathPatterns("/**/swagger-ui/**")
+//                .excludePathPatterns("/**/swagger-resources/**")
+//                .excludePathPatterns("/**/v3/**")
+//        ;
+//    }
+    @Autowired
+    private MyUserDetailsService myUserDetailsService;
     /**
      * 没有passwordEncoder会抛java.lang.IllegalArgumentException:
      * There is no PasswordEncoder mapped for the id "null"
@@ -43,13 +64,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(
             AuthenticationManagerBuilder auth) throws Exception {
 //        auth.authenticationProvider(myProvider); //注册自定义的provider
-        auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder())
-                .withUser("root").password(new BCryptPasswordEncoder().encode("123")).roles("ADMIN", "DBA")
-                .and()
-                .withUser("admin").password(new BCryptPasswordEncoder().encode("123")).roles("ADMIN", "USER")
-                .and()
-                .withUser("wzx").password(new BCryptPasswordEncoder().encode("123")).roles("USER");
-//        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+//        auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder())
+//                .withUser("root").password(new BCryptPasswordEncoder().encode("123")).roles("ADMIN", "DBA")
+//                .and()
+//                .withUser("admin").password(new BCryptPasswordEncoder().encode("123")).roles("ADMIN", "USER")
+//                .and()
+//                .withUser("wzx").password(new BCryptPasswordEncoder().encode("123")).roles("USER");
+        auth.userDetailsService(myUserDetailsService).passwordEncoder(passwordEncoder());
     }
 
     protected void configure(HttpSecurity http) throws Exception {

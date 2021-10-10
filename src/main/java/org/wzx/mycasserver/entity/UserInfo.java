@@ -1,21 +1,17 @@
 package org.wzx.mycasserver.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
+import java.time.LocalDateTime;
+import org.wzx.mycasserver.entity.base.CommonEntity;
+import com.baomidou.mybatisplus.annotation.TableField;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.wzx.mycasserver.entity.base.CommonEntity;
-
-import java.time.LocalDateTime;
-import java.util.Collection;
 
 /**
  * @author: 鱼头
  * @description: 用户信息表
- * @since: 2021-10-02
+ * @since: 2021-10-08
  */
 @Data
 @Builder
@@ -23,10 +19,10 @@ import java.util.Collection;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @TableName("user_info")
-@ApiModel(value = "UserInfo对象", description = "用户信息表")
-public class UserInfo extends CommonEntity implements UserDetails {
+@ApiModel(value="UserInfo对象", description="用户信息表")
+public class UserInfo extends CommonEntity {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID=1L;
 
     @ApiModelProperty(value = "账号")
     @TableField("username")
@@ -54,19 +50,19 @@ public class UserInfo extends CommonEntity implements UserDetails {
 
     @ApiModelProperty(value = "是否未过期")
     @TableField("is_account_non_expired")
-    private boolean isAccountNonExpired;
+    private Boolean isAccountNonExpired;
 
     @ApiModelProperty(value = "是否未被封号")
     @TableField("is_account_non_locked")
-    private boolean isAccountNonLocked;
+    private Boolean isAccountNonLocked;
 
     @ApiModelProperty(value = "密码是否未过期")
     @TableField("is_credentials_non_expired")
-    private boolean isCredentialsNonExpired;
+    private Boolean isCredentialsNonExpired;
 
     @ApiModelProperty(value = "是否可用")
     @TableField("is_enabled")
-    private boolean isEnabled;
+    private Boolean isEnabled;
 
     @ApiModelProperty(value = "昵称")
     @TableField("nick_name")
@@ -111,8 +107,4 @@ public class UserInfo extends CommonEntity implements UserDetails {
     @TableField("is_super")
     private Integer isSuper;
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-    }
 }

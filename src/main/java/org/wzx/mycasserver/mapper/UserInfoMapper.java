@@ -6,6 +6,6 @@ import org.wzx.mycasserver.entity.UserInfo;
 /**
  * @author: 鱼头
  * @description: 用户信息表Mapper接口
- * @since: 2021-10-02
+ * @since: 2021-10-08
  */
 public interface UserInfoMapper extends BaseMapper<UserInfo> {}
