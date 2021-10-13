@@ -14,8 +14,8 @@ import org.springframework.util.ReflectionUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import io.swagger.annotations.ApiOperation;
+import org.wzx.model.Result;
 import org.wzx.mycasserver.entity.base.CommonEntity;
-import org.wzx.mycasserver.entity.base.Result;
 import org.wzx.mycasserver.service.BaseService;
 import lombok.extern.slf4j.Slf4j;
 
@@ -28,9 +28,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author: 鱼头
  * @description: web基础虚类
+ * @author: 鱼头(韦忠幸)
  * @since: 2020-06-28
+ * @version: 0.0.1
  */
 @Slf4j
 public abstract class BaseController<S extends BaseService<T>, T extends Serializable> {
