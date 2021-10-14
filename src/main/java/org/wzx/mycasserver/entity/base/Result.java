@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 
 /**
- * @author: 鱼头
  * @description: API统一返回类
+ * @author: 鱼头(韦忠幸)
  * @time: 2020/5/21 9:46
  */
 @Data

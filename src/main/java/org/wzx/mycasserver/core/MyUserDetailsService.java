@@ -14,7 +14,7 @@ import org.wzx.mycasserver.service.IUserInfoService;
 
 /**
  * @description:
- * @author: 鱼头
+ * @author: 鱼头(韦忠幸)
  * @time: 2021-10-8 21:38
  */
 @Slf4j

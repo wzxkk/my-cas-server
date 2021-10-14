@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/dologin" method="post">
+    <input type="hidden" name="service" th:value="${service}">
+    <input type="text" name="username" placeholder="用户名" autofocus="autofocus">
+    <input type="password" name="password" placeholder="密码">
+    <input type="submit" style="width:190px;" value=" 登 录"/>
+</form>
+</body>
+</html>

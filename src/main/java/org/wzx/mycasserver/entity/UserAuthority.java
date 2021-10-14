@@ -8,9 +8,10 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
 /**
- * @author: 鱼头
  * @description: 用户与角色关系信息表
- * @since: 2021-10-08
+ * @author: 鱼头(韦忠幸)
+ * @since: 2021-10-13
+ * @version: 0.0.1
  */
 @Data
 @Builder

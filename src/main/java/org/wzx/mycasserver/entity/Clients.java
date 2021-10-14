@@ -8,9 +8,10 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
 /**
- * @author: 鱼头
  * @description: 客户端信息表
- * @since: 2021-10-08
+ * @author: 鱼头(韦忠幸)
+ * @since: 2021-10-13
+ * @version: 0.0.1
  */
 @Data
 @Builder
@@ -22,10 +23,6 @@ import lombok.*;
 public class Clients extends CommonEntity {
 
     private static final long serialVersionUID=1L;
-
-    @ApiModelProperty(value = "客户端代号")
-    @TableField("client_code")
-    private String clientCode;
 
     @ApiModelProperty(value = "客户端名称")
     @TableField("client_name")
@@ -43,8 +40,8 @@ public class Clients extends CommonEntity {
     @TableField("port")
     private String port;
 
-    @ApiModelProperty(value = "备注")
-    @TableField("mark")
-    private String mark;
+    @ApiModelProperty(value = "客户端状态")
+    @TableField("client_state")
+    private String clientState;
 
 }

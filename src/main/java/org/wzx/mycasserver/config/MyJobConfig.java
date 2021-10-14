@@ -12,7 +12,12 @@ import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import org.springframework.stereotype.Component;
 
 import java.util.Properties;
-
+/**
+ * @description:
+ * @author: 鱼头(韦忠幸)
+ * @since: 2021-10-13 14:41
+ * @version: 0.0.1
+ */
 @Component
 @Configuration
 public class MyJobConfig extends AdaptableJobFactory {

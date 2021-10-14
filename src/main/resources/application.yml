@@ -1,5 +1,12 @@
 server:
-  port: 11011
+  port: 443
+  http-port: 11011
+  ssl:
+    key-store: src/main/resources/keystore.p12
+    keyStoreType: PKCS12
+    key-password: 123456
+    key-store-password: 123456
+    key-alias: tomcat
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -15,4 +22,4 @@ logging:
   level:
     org:
       wzx:
-        mycas: debug
+        mycasserver: debug

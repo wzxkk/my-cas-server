@@ -7,7 +7,12 @@ import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArraySet;
-
+/**
+ * @description:
+ * @author: 鱼头(韦忠幸)
+ * @time: 2021-10-13 10:19
+ * @version: 0.0.1
+ */
 /**
  * * @Description: websocket的具体实现类
  * * 使用springboot的唯一区别是要@Component声明下，而使用独立容器是由容器自己管理websocket的，

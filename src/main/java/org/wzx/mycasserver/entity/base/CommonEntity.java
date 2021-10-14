@@ -14,8 +14,8 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
- * @author: 鱼头
  * @description: 实体基础类
+ * @author: 鱼头(韦忠幸)
  * @since: 2020/5/21 9:46
  */
 @Data
@@ -46,12 +46,4 @@ public class CommonEntity implements Serializable {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss" )
     @ApiModelProperty(value = "数据最后的更新时间" , hidden = true)
     private LocalDateTime updateTime;
-
-    /**
-     * 数据状态
-     */
-    @TableField(value = "status" , fill = FieldFill.INSERT)
-    @ApiModelProperty(value = "数据状态" , hidden = true)
-    private String status;
-
 }

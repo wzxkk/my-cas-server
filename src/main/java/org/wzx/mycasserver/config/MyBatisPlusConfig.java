@@ -13,8 +13,9 @@ import java.time.LocalDateTime;
 
 /**
  * @description: mybatis-plus 相关配置类
- * @author: 鱼头
- * @time: 2021-10-8 15:56
+ * @author: 鱼头(韦忠幸)
+ * @since: 2021-10-8 15:56
+ * @version: 0.0.1
  */
 @Configuration
 @MapperScan("org.wzx.mycasserver.mapper")

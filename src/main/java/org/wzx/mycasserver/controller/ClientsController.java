@@ -10,9 +10,11 @@ import org.wzx.mycasserver.controller.base.BaseController;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author: 鱼头
+
  * @description: 客户端信息表API接口
- * @since: 2021-10-08
+ * @author: 鱼头(韦忠幸)
+ * @since: 2021-10-13
+ * @version: 0.0.1
  */
 @RestController
 @RequestMapping("api/my-cas-server/clients" )

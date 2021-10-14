@@ -23,9 +23,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author: 鱼头
  * @description: 系统配置杂项
- * @time: 2020/5/19 16:46
+ * @author: 鱼头(韦忠幸)
+ * @since : 2020/5/19 16:46
+ * @version: 0.0.1
  */
 
 @Configuration
